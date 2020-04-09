@@ -2,13 +2,13 @@
 
 
 CSE 405 CSUSB Spring 2020 online
-HI my name is binghui Liu
 
 Work progress
 
 Git. Create and use remote GitHub repository for remainder of course. Include link to remote repo in progress report.
 
-In process
+In process  : 
+Finish edit 1 4/9/2020
 
 Javascript and JSON. Write code that tests your understanding of Javascript and JSON. Place code in remote repo and include link to repo in progress report.
 
