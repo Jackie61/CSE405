@@ -12,7 +12,12 @@ Finish edit 1 4/9/2020
 
 Javascript and JSON. Write code that tests your understanding of Javascript and JSON. Place code in remote repo and include link to repo in progress report.
 
-Not started yet
+Started
+
+In progress: Javascrip
+
+Planned: JSON
+
 
 Nodejs. Write code that tests your understanding of Nodejs. Place code in remote repo and include link to repo in progress report.
 
