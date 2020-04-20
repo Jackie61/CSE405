@@ -21,15 +21,15 @@ Planned: JSON
 
 Nodejs. Write code that tests your understanding of Nodejs. Place code in remote repo and include link to repo in progress report.
 
-Not started yet
+Start to use 
 
 Firebase Auth. Write code that tests your understanding of how to use Firebase authentication. Place code in remote repo and include link to repo in progress report.
 
-Planned
+started
 
 Cloud Firestore. Write code that tests your understanding of how to use Cloud Firestore. Place code in remote repo and include link to repo in progress report.
 
-Planned
+Started 
 
 Web App. Create a Web application that utilizes the above technologies. Place code in remote repo and include link to repo in progress report.
 
