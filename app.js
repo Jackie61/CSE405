@@ -19,11 +19,11 @@ function googleLogin()
 function AnyonymousLogin()
 {
     location.replace("anyomous.html")
-}
+};
 function redirectMain()
 {
-    locatioin.replace("Main.html")
-}
+    locatioin.replace("main.html")
+};
 
 
 
