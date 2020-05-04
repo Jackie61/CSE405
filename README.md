@@ -26,6 +26,7 @@ Start to use
 Firebase Auth. Write code that tests your understanding of how to use Firebase authentication. Place code in remote repo and include link to repo in progress report.
 
 started
+Finished Google auth set up
 
 Cloud Firestore. Write code that tests your understanding of how to use Cloud Firestore. Place code in remote repo and include link to repo in progress report.
 
@@ -35,3 +36,4 @@ Web App. Create a Web application that utilizes the above technologies. Place co
 
 Planned
 https://jackieweb-8643a.firebaseapp.com/
+Finish basic on Game 1 tic tac toe
