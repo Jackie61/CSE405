@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    canvas {
+        border:1px solid black;
+        background-color: #f1f1f1;
+    }
+  </style>
+  <title>Document</title>
+  <script src="app.js"></script>
+  <script src="login.js"></script>
+</head>
+<body onload="startGame()">
+  <div style="text-align: center;">
+    <div>
+      <div>
+        <div>
+          <div>
+            <script>
+              var myGamePiece;
+              var setLine;
+              function startGame() 
+              {
+                 myGameArea.start();
+                 setLine = new lines()
+              }
+              var myGameArea = 
+              {
+                  canvas : document.createElement("canvas"),
+                  start : function() {
+                      this.canvas.width = 600;
+                      this.canvas.height = 600;
+                      this.context = this.canvas.getContext("2d");
+                      
+                      document.body.insertBefore(this.canvas, document.body.childNodes[0]);
+                      },
+              }
+
+              function lines()
+              {//set lines
+                ctx = myGameArea.context;
+                  this.lineW=600
+                  this.lineH=600
+                  ctx.moveTo(this.lineW/3,0);
+                  ctx.lineTo(this.lineW/3,this.lineH);
+                  ctx.moveTo(2*this.lineW/3,0);
+                  ctx.lineTo(2*this.lineW/3,this.lineH);
+
+                  ctx.moveTo(0,this.lineH/3);
+                  ctx.lineTo(this.lineW,this.lineH/3);
+                  ctx.moveTo(0,2*this.lineH/3);
+                  ctx.lineTo(this.lineW,2*this.lineH/3);
+                  ctx.stroke();
+              }
+
+              function component(width, height, color, x, y) 
+              {
+                  this.width = width;
+                  this.height = height;
+                  this.x = x;
+                  this.y = y;
+
+                  ctx = myGameArea.context;
+                  ctx.fillStyle = color;
+                  ctx.fillRect(this.x, this.y, this.width, this.height);
+
+              }
+
+              function clickX(x,y)
+              {
+                this.x = x;
+                this.y = y;
+                ctx = myGameArea.context;
+
+                ctx.moveTo(x+20,y+20);
+                ctx.lineTo(x-20,y-20);
+                ctx.moveTo(x-20,y+20);
+                ctx.lineTo(x+20,y-20);
+                ctx.stroke();
+                document.getElementById("zone1").style.visibility = "hidden";
+              }
+
+              function clickO(x,y)
+              {
+                this.x = x;
+                this.y = y;
+                ctx = myGameArea.context;
+
+                ctx.beginPath();
+                ctx.arc(x, y, 50, 0, 2 * Math.PI);
+                ctx.stroke();
+
+
+                document.getElementById("zone1").style.visibility = "hidden";
+              }
+
+            </script>
+          </div>
+            <DIV style="margin-left: 215px;">
+              <table> 
+                <tr>
+                  <th><button onclick="clickX(100,100)">X</button></th>
+                  <th><button onclick="clickX(300,100)">X</button></th>
+                  <th><button onclick="clickX(500,100)">X</button></th>
+                  <th><button onclick="clickO(100,100)">O</button></th>
+                  <th><button onclick="clickO(300,100)">O</button></th>
+                  <th><button onclick="clickO(500,100)">O</button></th>
+                </tr>
+                <tr>
+                  <th><button onclick="clickX(100,300)">X</button></th>
+                  <th><button onclick="clickX(300,300)">X</button></th>
+                  <th><button onclick="clickX(500,300)">X</button></th>
+                  <th><button onclick="clickO(100,300)">O</button></th>
+                  <th><button onclick="clickO(300,300)">O</button></th>
+                  <th><button onclick="clickO(500,300)">O</button></th>
+                </tr>
+                <tr>
+                  <th><button onclick="clickX(100,500)">X</button></th>
+                  <th><button onclick="clickX(300,500)">X</button></th>
+                  <th><button onclick="clickX(500,500)">X</button></th>
+                  <th><button onclick="clickO(100,500)">O</button></th>
+                  <th><button onclick="clickO(300,500)">O</button></th>
+                  <th><button onclick="clickO(500,500)">O</button></th>
+                </tr>
+              </table>
+            </DIV>
+          
+
+
+        </div>
+      </div>
+    </div>
+    <button onclick="ReturnToLogIn()">Return To Log In Page</button>
+
+    <script>
+      function ReturnToLogIn()
+      {
+        location.replace("index.html")
+      }
+    </script>
+  </div>
+</body>
+</html>

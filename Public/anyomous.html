@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="login.js"></script>
+</head>
+<body>
+    <div>
+      Name: <input type="text" name="User_name" id="User_name_id" value ="Anyomous">
+      <div>
+    <button onclick="login()"> Log In</button>
+    <button onclick="ReturnToLogIn()">Return To Log In Page</button>
+    <script>
+      function login()
+      {
+        var User = User_name_id.value 
+        if(User == 'Anyomous')
+        {
+          var User = User_name_id.value + Math.round(Math.random() * 100 + 1);
+        }
+        console.log(User);
+        location.replace("main.html")
+      }
+      function ReturnToLogIn()
+      {
+        location.replace("index.html")
+      }
+    </script>
+</body>
+</html>
