@@ -32,102 +32,31 @@
     </style>
 
       <script src="app.js"></script>
+
   </head>
   <body>
-
-    <div style="text-align:center;">
-      <header>Welcome Please Log In</header>
-      <button onclick="googleLogin()">Log In with google</button>
-      <br>
-      <button onclick="AnyonymousLogin()">Log In Anyonymous</button>
-      <button onclick="redirectMain()">Click to Access</button>
+    <div id="MainLogin" style="text-align:center;">
+      <div>
+        <header>Welcome Please Log In</header>
+        <div id="GoogleLogin" style="visibility:visible;">
+          <button onclick="googleLogin()">Log In with google</button>
+        </div>
+        <div id="AnyonyLogin" style="visibility: visible;">
+          <button id="Anyonymouslogin" onclick="AnyonymousLogin()">Log In Anyonymous</button>
+        </div>
+        <div id="AllLogOut" style="visibility: visible ;" >
+          <button id="logout" onclick="Logout()">Log Out</button>
+        </div>
+      </div>
+      <script src="anylogin.js"></script>
     </div>
+
+
 
     <div style="background-color:lightblue">
-      <h3> Hi </h3>
-      <h3 id="Name">Please Log In</h3>
-      
-      <p id="Load"></p>
+      <h2 style="text-align: center;"> Hi, Welcome </h2>
+      <h3 id="Name" style="text-align: center;">Please Log In</h3>
     </div>
-    <div style="text-align:center;border:1px solid red;">
-      <canvas id="Game" width="600" height="600" 
-      style="border: 2px solid #32ECEF;">
-      </canvas>
-      <script>
-          var c = document.getElementById("Game");
-          var ctx = c.getContext("2d");
-          ctx.moveTo(200, 0);
-          ctx.lineTo(200, 600);
-          ctx.moveTo(400, 0);
-          ctx.lineTo(400, 600);
-
-          ctx.moveTo(0, 200);
-          ctx.lineTo(600, 200);
-          ctx.moveTo(0, 400);
-          ctx.lineTo(600, 400);
-
-          ctx.stroke();
-          </script>
-
-          <table align="center"> 
-            <tr>
-              <th><button id="1" style="visibility: visible;" onclick="clickX(this.id ,100,100)">X</button></th>
-              <th><button id="2" style="visibility: visible;" onclick="clickX(this.id ,300,100)">X</button></th>
-              <th><button id="3" style="visibility: visible;" onclick="clickX(this.id ,500,100)">X</button></th>
-              <th><button id="11" style="visibility: visible;" onclick="clickO(this.id ,100,100)">O</button></th>
-              <th><button id="12" style="visibility: visible;" onclick="clickO(this.id ,300,100)">O</button></th>
-              <th><button id="13" style="visibility: visible;" onclick="clickO(this.id ,500,100)">O</button></th>
-            </tr>
-            <tr>
-              <th><button id="4" style="visibility: visible;" onclick="clickX(this.id ,100,300)">X</button></th>
-              <th><button id="5" style="visibility: visible;" onclick="clickX(this.id ,300,300)">X</button></th>
-              <th><button id="6" style="visibility: visible;" onclick="clickX(this.id ,500,300)">X</button></th>
-              <th><button id="14" style="visibility: visible;" onclick="clickO(this.id ,100,300)">O</button></th>
-              <th><button id="15" style="visibility: visible;" onclick="clickO(this.id ,300,300)">O</button></th>
-              <th><button id="16" style="visibility: visible;" onclick="clickO(this.id ,500,300)">O</button></th>
-            </tr>
-            <tr>
-              <th><button id="7" style="visibility: visible;" onclick="clickX(this.id ,100,500)">X</button></th>
-              <th><button id="8" style="visibility: visible;" onclick="clickX(this.id ,300,500)">X</button></th>
-              <th><button id="9" style="visibility: visible;" onclick="clickX(this.id ,500,500)">X</button></th>
-              <th><button id="17" style="visibility: visible;" onclick="clickO(this.id ,100,500)">O</button></th>
-              <th><button id="18" style="visibility: visible;" onclick="clickO(this.id ,300,500)">O</button></th>
-              <th><button id="19" style="visibility: visible;" onclick="clickO(this.id ,500,500)">O</button></th>
-            </tr>
-          </table>
-          <header>Refresh To clear</header>
-          <script>
-            function clickX(ele,x,y)
-            {
-              var c = document.getElementById("Game");
-              var ctx = c.getContext("2d");
-
-                ctx.moveTo(x+50,y+50);
-                ctx.lineTo(x-50,y-50);
-                ctx.moveTo(x-50,y+50);
-                ctx.lineTo(x+50,y-50);
-                ctx.stroke();
-                document.getElementById(ele).style.visibility = "hidden";
-                document.getElementById(1+ele).style.visibility = "hidden";
-
-            };
-
-            function clickO(ele,x,y)
-            {
-              var c = document.getElementById("Game");
-              var ctx = c.getContext("2d");
-
-                ctx.beginPath();
-                ctx.arc(x, y, 50, 0, 2 * Math.PI);
-                ctx.stroke();
-
-
-                document.getElementById(ele).style.visibility = "hidden";
-                document.getElementById(ele-10).style.visibility = "hidden";
-            }
-          </script>
-      </div>
-      
-
+    <a href="TTT.html">Tic Tac Toe Mini Game</a>
   </body>
 </html>
