@@ -14,18 +14,18 @@ Javascript and JSON. Write code that tests your understanding of Javascript and 
 
 Started
 
-In progress: Javascrip
+Done: Javascrip
 
-Planned: JSON
+Done: JSON
 
 
 Nodejs. Write code that tests your understanding of Nodejs. Place code in remote repo and include link to repo in progress report.
 
-Start to use 
+Done
 
 Firebase Auth. Write code that tests your understanding of how to use Firebase authentication. Place code in remote repo and include link to repo in progress report.
 
-started
+
 Finished Google auth set up
 
 Cloud Firestore. Write code that tests your understanding of how to use Cloud Firestore. Place code in remote repo and include link to repo in progress report.
