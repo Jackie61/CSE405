@@ -3,19 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Index</title>
 
     <!-- update the version number as needed -->
-    <script defer src="/__/firebase/7.14.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/7.14.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/7.14.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/7.14.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/7.14.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/7.14.1/firebase-firestore.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-firestore.js"></script>
     <!-- initialize the SDK after all desired features are loaded -->
     <script defer src="/__/firebase/init.js"></script>
-
+    
     <style media="screen">
       body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
       #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
@@ -30,33 +30,29 @@
         body { border-top: 16px solid #ffa100; }
       }
     </style>
-
-      <script src="app.js"></script>
+    <script src="./app.js"></script>
 
   </head>
   <body>
     <div id="MainLogin" style="text-align:center;">
-      <div>
-        <header>Welcome Please Log In</header>
+      <div id="messageS"> Welcome Please Log In
         <div id="GoogleLogin" style="visibility:visible;">
-          <button onclick="googleLogin()">Log In with google</button>
+          <button id="GoogleLogin" onclick="googleLogin()">Log in with google</button>
         </div>
         <div id="AnyonyLogin" style="visibility: visible;">
-          <button id="Anyonymouslogin" onclick="AnyonymousLogin()">Log In Anyonymous</button>
-        </div>
-        <div id="AllLogOut" style="visibility: visible ;" >
-          <button id="logout" onclick="Logout()">Log Out</button>
+          <button id="Anyonymouslogin" onclick="AnyonymousLogin()">Log in Anyonymous</button>
         </div>
       </div>
-      <script src="anylogin.js"></script>
+      <div id="userPage" style="display: none;">
+        <button><a href="main.html">Click To Access main page</a></button>
+      </div>
+      <br>
+      <script>
+        document.write(Date());
+      </script>
     </div>
+    <div>
 
-
-
-    <div style="background-color:lightblue">
-      <h2 style="text-align: center;"> Hi, Welcome </h2>
-      <h3 id="Name" style="text-align: center;">Please Log In</h3>
     </div>
-    <a href="TTT.html">Tic Tac Toe Mini Game</a>
   </body>
 </html>

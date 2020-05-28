@@ -1,146 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <style>
-    canvas {
-        border:1px solid black;
-        background-color: #f1f1f1;
-    }
-  </style>
-  <title>Document</title>
-  <script src="app.js"></script>
-  <script src="login.js"></script>
-</head>
-<body onload="startGame()">
-  <div style="text-align: center;">
-    <div>
-      <div>
-        <div>
-          <div>
-            <script>
-              var myGamePiece;
-              var setLine;
-              function startGame() 
-              {
-                 myGameArea.start();
-                 setLine = new lines()
-              }
-              var myGameArea = 
-              {
-                  canvas : document.createElement("canvas"),
-                  start : function() {
-                      this.canvas.width = 600;
-                      this.canvas.height = 600;
-                      this.context = this.canvas.getContext("2d");
-                      
-                      document.body.insertBefore(this.canvas, document.body.childNodes[0]);
-                      },
-              }
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User page</title>
 
-              function lines()
-              {//set lines
-                ctx = myGameArea.context;
-                  this.lineW=600
-                  this.lineH=600
-                  ctx.moveTo(this.lineW/3,0);
-                  ctx.lineTo(this.lineW/3,this.lineH);
-                  ctx.moveTo(2*this.lineW/3,0);
-                  ctx.lineTo(2*this.lineW/3,this.lineH);
-
-                  ctx.moveTo(0,this.lineH/3);
-                  ctx.lineTo(this.lineW,this.lineH/3);
-                  ctx.moveTo(0,2*this.lineH/3);
-                  ctx.lineTo(this.lineW,2*this.lineH/3);
-                  ctx.stroke();
-              }
-
-              function component(width, height, color, x, y) 
-              {
-                  this.width = width;
-                  this.height = height;
-                  this.x = x;
-                  this.y = y;
-
-                  ctx = myGameArea.context;
-                  ctx.fillStyle = color;
-                  ctx.fillRect(this.x, this.y, this.width, this.height);
-
-              }
-
-              function clickX(x,y)
-              {
-                this.x = x;
-                this.y = y;
-                ctx = myGameArea.context;
-
-                ctx.moveTo(x+20,y+20);
-                ctx.lineTo(x-20,y-20);
-                ctx.moveTo(x-20,y+20);
-                ctx.lineTo(x+20,y-20);
-                ctx.stroke();
-                document.getElementById("zone1").style.visibility = "hidden";
-              }
-
-              function clickO(x,y)
-              {
-                this.x = x;
-                this.y = y;
-                ctx = myGameArea.context;
-
-                ctx.beginPath();
-                ctx.arc(x, y, 50, 0, 2 * Math.PI);
-                ctx.stroke();
-
-
-                document.getElementById("zone1").style.visibility = "hidden";
-              }
-
-            </script>
-          </div>
-            <DIV style="margin-left: 215px;">
-              <table> 
-                <tr>
-                  <th><button onclick="clickX(100,100)">X</button></th>
-                  <th><button onclick="clickX(300,100)">X</button></th>
-                  <th><button onclick="clickX(500,100)">X</button></th>
-                  <th><button onclick="clickO(100,100)">O</button></th>
-                  <th><button onclick="clickO(300,100)">O</button></th>
-                  <th><button onclick="clickO(500,100)">O</button></th>
-                </tr>
-                <tr>
-                  <th><button onclick="clickX(100,300)">X</button></th>
-                  <th><button onclick="clickX(300,300)">X</button></th>
-                  <th><button onclick="clickX(500,300)">X</button></th>
-                  <th><button onclick="clickO(100,300)">O</button></th>
-                  <th><button onclick="clickO(300,300)">O</button></th>
-                  <th><button onclick="clickO(500,300)">O</button></th>
-                </tr>
-                <tr>
-                  <th><button onclick="clickX(100,500)">X</button></th>
-                  <th><button onclick="clickX(300,500)">X</button></th>
-                  <th><button onclick="clickX(500,500)">X</button></th>
-                  <th><button onclick="clickO(100,500)">O</button></th>
-                  <th><button onclick="clickO(300,500)">O</button></th>
-                  <th><button onclick="clickO(500,500)">O</button></th>
-                </tr>
-              </table>
-            </DIV>
-          
-
-
-        </div>
-      </div>
-    </div>
-    <button onclick="ReturnToLogIn()">Return To Log In Page</button>
-
-    <script>
-      function ReturnToLogIn()
-      {
-        location.replace("index.html")
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.14.5/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.14.5/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-storage.js"></script>
+    <script defer src="/__/firebase/7.14.5/firebase-firestore.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+    
+    <style media="screen">
+      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
+      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
+      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
+      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
+      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      @media (max-width: 600px) {
+        body, #message { margin-top: 0; background: white; box-shadow: none; }
+        body { border-top: 16px solid #ffa100; }
       }
-    </script>
-  </div>
-</body>
+    </style>
+
+  </head>
+  <body>
+
+    <a href="TTT.html">Tic Tac Toe Mini Game</a>
+
+    <div id="AllLogOut" style="visibility: visible ;" >
+      <button id="logout" onclick="Logout()">Log out</button>
+    </div>
+  </body>
 </html>
