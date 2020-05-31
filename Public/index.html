@@ -34,25 +34,24 @@
 
   </head>
   <body>
-    <div id="MainLogin" style="text-align:center;">
-      <div id="messageS"> Welcome Please Log In
-        <div id="GoogleLogin" style="visibility:visible;">
+    <div id="Content">
+      <div id="SignedIn" style="display: none;">
+        <div id="UserInfo" style="display: block;">
+
+        </div>
+        <p>
+          <button id="LogOut" onclick="Logout()"> Log out</button>
+        </p>
+      </div>
+      <div id="NotSignedIn" style="display: block;">
+        <div id="GoogleLogin">
           <button id="GoogleLogin" onclick="googleLogin()">Log in with google</button>
         </div>
-        <div id="AnyonyLogin" style="visibility: visible;">
+        <div id="AnyonyLogin">
           <button id="Anyonymouslogin" onclick="AnyonymousLogin()">Log in Anyonymous</button>
         </div>
       </div>
-      <div id="userPage" style="display: none;">
-        <button><a href="main.html">Click To Access main page</a></button>
       </div>
-      <br>
-      <script>
-        document.write(Date());
-      </script>
-    </div>
-    <div>
-
     </div>
   </body>
 </html>
