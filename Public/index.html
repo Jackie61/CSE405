@@ -30,6 +30,64 @@
         body { border-top: 16px solid #ffa100; }
       }
     </style>
+     <!-- w3school code  -->
+    <style>
+      .button{
+        background-color:rgb(14, 235, 243);
+        border-radius: 12px;
+        border: 2px solid rgb(231, 235, 20);
+        color: black;
+        padding: 14px 40px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+      }
+      .button:hover {
+        background-color: rgb(4, 158, 230); /* Green */
+        color: black;
+      }
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+
+      .button:hover span {
+        padding-right: 25px;
+      }
+
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      .button:active {
+        background-color: #3e8e41;
+        box-shadow: 0 5px #666;
+        transform: translateY(4px);
+      }
+
+      #corner{
+        position: fixed;
+        bottom: 0;
+        right: 0;
+      }   
+      </style>
+       <!-- w3school code  -->
     <script src="./app.js"></script>
 
   </head>
@@ -37,18 +95,38 @@
     <div id="Content">
       <div id="SignedIn" style="display: none;">
         <div id="UserInfo" style="display: block;">
-
+          <div style="text-align: right;" style="background-color: blue;">
+            <div style="font-size: 20px;">
+              <div id="Name"></div>
+              <div id="Email"></div>
+            </div>
+          </div>
+          <div>
+            <h1>Mini Game</h1>
+            <button class="button"><a href="TTT.html">MiniGame Tic Tac Toe</a></button>
+          </div>
+          <div>
+            <h1>User Notes</h1>
+            <button onclick="readFirestor()">refreash note</button>
+          </div>
         </div>
-        <p>
-          <button id="LogOut" onclick="Logout()"> Log out</button>
-        </p>
+        <div id="corner">
+          <button id="LogOut" onclick="Logout()" class="button"> <span>Log Out</span></button>
+        </div>
       </div>
       <div id="NotSignedIn" style="display: block;">
-        <div id="GoogleLogin">
-          <button id="GoogleLogin" onclick="googleLogin()">Log in with google</button>
-        </div>
-        <div id="AnyonyLogin">
-          <button id="Anyonymouslogin" onclick="AnyonymousLogin()">Log in Anyonymous</button>
+        <div style="text-align: center;">
+          <div style="background-color: lightcyan;" >
+            <div style="color: blue;">
+              <h1>Welcome Please login</h1>
+            </div>
+          </div>
+          <div id="GoogleLogin">
+            <button id="GoogleLogin" onclick="googleLogin()" class="button"><span>Log In with Google </span></button>
+          </div>
+          <div id="AnyonyLogin">
+            <button id="Anyonymouslogin" onclick="AnyonymousLogin()" class="button"><span>Log in Anyonymous</span></button>
+          </div>
         </div>
       </div>
       </div>

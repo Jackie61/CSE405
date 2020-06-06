@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded' , event =>{
     console.log(app);
     handleSignedOutUser();
   });
+
   function handleSignedOutUser() {
     if(login === false)
     {
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded' , event =>{
     firebase.auth().signInWithPopup(provider)
         .then(result => {
           const currentUser = result.user;
-          handleSignedINUser();
+          handleSignedINUser(currentUser);
+          user = result.user;
            console.log(currentUser);
         })
 
@@ -28,13 +30,10 @@ document.addEventListener('DOMContentLoaded' , event =>{
   
   function Logout()
   {
-    const btnLogout = document.getElementById('logout');
-    btnLogout.addEventListener('click', e => {
         firebase.auth().signOut();
-       handleSignedOutUser();
+        login = false;
+        handleSignedOutUser();
         console.log("signed out")
-    });  
-    login = false;
     };
   
   function AnyonymousLogin(){
@@ -43,20 +42,29 @@ document.addEventListener('DOMContentLoaded' , event =>{
   
     btnLogin.addEventListener('click', event => {
         firebase.auth().signInAnonymously().then(result => {
-          const currentUser = result.user;
-          document.getElementById('SignedIn').style.display = 'block';
-          document.getElementById('NotSignedIn').style.display = 'none';
+          anyomuser = '{"person":['+
+              '{"displayName" : "","email" : ""}]}';
+          const currentUser = anyomuser;
+          handleSignedINUser(currentUser);
          console.log(currentUser)
       })
     });
   };
 
-  function handleSignedINUser(){
+  function handleSignedINUser(user){
     login === true;
     document.getElementById('SignedIn').style.display = 'block';
     document.getElementById('NotSignedIn').style.display = 'none';
+    document.getElementById('Name').textContent= "Name: " + user.displayName;
+    document.getElementById('Email').textContent= "Email: " + user.email;
   }
 
-  
 
-
+function readFirestor()
+{
+  var db = firebase.firestore();
+  db.collection('post').doc("mypost")
+    .onSnapshot(function(doc) {
+      console.log("Current data: ", doc.data());
+    });
+}
