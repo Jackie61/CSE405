@@ -30,10 +30,10 @@ Finished Google auth set up
 
 Cloud Firestore. Write code that tests your understanding of how to use Cloud Firestore. Place code in remote repo and include link to repo in progress report.
 
-finished 
+finished Cod ein app.js read the notes in the database and display it in console
 
 Web App. Create a Web application that utilizes the above technologies. Place code in remote repo and include link to repo in progress report.
 
-Planned
+
 https://jackieweb-8643a.firebaseapp.com/
 Finish basic on Game 1 tic tac toe
